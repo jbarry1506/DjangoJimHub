@@ -17,12 +17,10 @@
     </div>
 
     <div class="container">
-      <nav class="nav navbar-nav">
-        <li>
-          <a class="navbar-brand" href="/">Home</a>
-          <a class="navbar-link" href="../accounts/signup">Signup</a>
-        </li>
-      </nav>
+      {% block nav %}
+
+      {% endblock %}
+
       {% block body %}
       <h1>Base test</h1>
       {% endblock %}
