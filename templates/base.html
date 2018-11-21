@@ -3,8 +3,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-
+    {% load static %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/master.css" %}">
     {% block head %}
     <title>Base</title>
     {% endblock %}
@@ -18,7 +19,22 @@
 
     <div class="container">
       {% block nav %}
-
+        {% if user.is_authenticated %}
+        <nav class="nav navbar-nav">
+          <li>
+            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-link" href="/accounts/logout/">Logout</a>
+          </li>
+        </nav>
+        {% else %}
+        <nav class="nav navbar-nav">
+          <li>
+            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-link nav-master" href="/accounts/login/">Login</a>
+            <a class="navbar-link nav-master" href="/accounts/signup/">Sign Up</a>
+          </li>
+        </nav>
+        {% endif %}
       {% endblock %}
 
       {% block body %}

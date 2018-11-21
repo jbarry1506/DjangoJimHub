@@ -3,24 +3,6 @@
   <title>JimHub Home</title>
 {% endblock %}
 
-{% block nav %}
-  {% if user.is_authenticated %}
-  <nav class="nav navbar-nav">
-    <li>
-      <a class="navbar-brand" href="/">Home</a>
-      <a class="navbar-link" href="/accounts/logout/">Logout</a>
-    </li>
-  </nav>
-  {% else %}
-  <nav class="nav navbar-nav">
-    <li>
-      <a class="navbar-brand" href="/">Home</a>
-      <a class="navbar-link" href="/accounts/login/">Login</a>
-    </li>
-  </nav>
-  {% endif %}
-{% endblock %}
-
 {% block body %}
 <h1>This is index</h1>
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
