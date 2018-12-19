@@ -18,10 +18,12 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 from . import views
 from accounts import urls
+from blog import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
+    path('blog/', include('blog.urls')),
     path('', views.IndexView.as_view(), name='index'),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
